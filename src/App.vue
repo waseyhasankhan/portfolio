@@ -1,32 +1,52 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-main>
+      <app-bar />
+      <my-intro />
+      <about-me />
+      <my-portfolio />
+      <contact-me />
+      <!-- <router-view /> -->
+      <the-footer />
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import AppBar from "./components/AppBar.vue";
+import MyIntro from "./views/MyIntro.vue";
+import AboutMe from "./views/AboutMe.vue";
+import MyPortfolio from "./views/MyPortfolio.vue";
+import ContactMe from "./views/ContactMe.vue";
+import TheFooter from "./components/TheFooter.vue";
 
-#nav {
-  padding: 30px;
-}
+export default {
+  name: "App",
+  components: {
+    AppBar,
+    MyIntro,
+    AboutMe,
+    MyPortfolio,
+    ContactMe,
+    TheFooter,
+  },
+};
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&family=Montserrat:wght@300;400;500;700&family=Open+Sans:wght@300&display=swap");
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: "Montserrat";
+  // font-family: "Henny Penny", cursive;
+  // background-color: #e2b143;
+  // color: #4a171e;
+}
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 </style>
